@@ -1,47 +1,17 @@
-const form = document.querySelector('form');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const messageInput = document.querySelector('#message');
-const successMessage = document.querySelector('.success');
-const errorMessage = document.querySelector('.error');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  var error = document.querySelector(".error");
   
-  if (!nameInput.value || !emailInput.value || !phoneInput.value || !messageInput.value) {
-    errorMessage.style.display = 'block';
-    successMessage.style.display = 'none';
+  if (name == "" || email == "" || message == "") {
+    error.style.display = "block";
+    return false;
   } else {
-    // Here you can add your code to submit the form
-    errorMessage.style.display = 'none';
-    successMessage.style.display = 'block';
-    form.reset();
+    error.style.display = "none";
+    return true;
   }
-});
-
-nameInput.addEventListener('input', () => {
-  if (!nameInput.value) {
-    nameInput.setCustomValidity('Please enter your name.');
-  } else {
-    nameInput.setCustomValidity('');
-  }
-});
-
-emailInput.addEventListener('input', () => {
-  if (!emailInput.checkValidity()) {
-    emailInput.setCustomValidity('Please enter a valid email address.');
-  } else {
-    emailInput.setCustomValidity('');
-  }
-});
-
-messageInput.addEventListener('input', () => {
-  if (!messageInput.value) {
-    messageInput.setCustomValidity('Please enter a message.');
-  } else {
-    messageInput.setCustomValidity('');
-  }
-});
+}
 
 
 function initMap() {
