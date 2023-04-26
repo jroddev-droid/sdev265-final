@@ -1,27 +1,48 @@
-const form = document.querySelector('#myForm');
-const firstName = document.querySelector('#firstName');
-const lastName = document.querySelector('#lastName');
-const email = document.querySelector('#email');
-const comment = document.querySelector('#comment');
+const form = document.querySelector('form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const messageInput = document.querySelector('#message');
+const successMessage = document.querySelector('.success');
+const errorMessage = document.querySelector('.error');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!firstName.value) {
-    alert('Please enter your first name.');
-    firstName.focus();
-  } else if (!lastName.value) {
-    alert('Please enter your last name.');
-    lastName.focus();
-  } else if (!email.value) {
-    alert('Please enter your email.');
-    email.focus();
-  } else if (!comment.value) {
-    alert('Please enter your comment.');
-    comment.focus();
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  if (!nameInput.value || !emailInput.value || !phoneInput.value || !messageInput.value) {
+    errorMessage.style.display = 'block';
+    successMessage.style.display = 'none';
   } else {
-    form.submit();
+    // Here you can add your code to submit the form
+    errorMessage.style.display = 'none';
+    successMessage.style.display = 'block';
+    form.reset();
   }
 });
+
+nameInput.addEventListener('input', () => {
+  if (!nameInput.value) {
+    nameInput.setCustomValidity('Please enter your name.');
+  } else {
+    nameInput.setCustomValidity('');
+  }
+});
+
+emailInput.addEventListener('input', () => {
+  if (!emailInput.checkValidity()) {
+    emailInput.setCustomValidity('Please enter a valid email address.');
+  } else {
+    emailInput.setCustomValidity('');
+  }
+});
+
+messageInput.addEventListener('input', () => {
+  if (!messageInput.value) {
+    messageInput.setCustomValidity('Please enter a message.');
+  } else {
+    messageInput.setCustomValidity('');
+  }
+});
+
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {

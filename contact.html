@@ -26,7 +26,24 @@
             The Website Team
         </p>
     </div>
-    <form id="myForm" action="#" method="post">
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+        
+        <p class="success" style="display: none;">Thanks for your message!</p>
+        <p class="error" style="display: none;">Please fill out all fields.</p>
+      </form>
+      
+    <!-- <form id="myForm" action="#" method="post">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" required><br><br>
       
@@ -40,7 +57,7 @@
         <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
       
         <input type="submit" value="Submit">
-      </form>
+      </form> -->
       
 </body>
 </html>
