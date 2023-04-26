@@ -127,6 +127,9 @@ body {
     font-weight: bolder;
     font-size: larger;
     padding-top: 4rem;
+}
+
+.camping-welcome-message p, h3 {
     padding-left: 1rem;
 }
 
@@ -176,3 +179,32 @@ body {
 .contact-form {
     border: 1px solid red;
 }
+
+/* Media Queries */
+/* styles for screens smaller than 768px */
+@media screen and (max-width: 767px) {
+    .wildlife-main-content {
+        text-align: center;
+    }
+    .wildlife-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wildlife-card {
+        margin-bottom: 30px;
+    }
+    .wildlife-card img {
+        width: 100%;
+        height: auto;
+    }
+    .wildlife-card h4 {
+        font-size: 20px;
+    }
+    .wildlife-card caption {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+  
