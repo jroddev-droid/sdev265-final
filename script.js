@@ -1,5 +1,3 @@
-import { Loader } from "@googlemaps/js-api-loader"
-
 const form = document.querySelector('#myForm');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
@@ -25,20 +23,26 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 39.7684, lng: -86.1581},
+    zoom: 7
+  });
 
-// var campingSites = [
-//   {name: 'Brown County State Park', lat: 39.1933258, lng:-86.2191608},
-//   {name: 'Clifty Falls State Park', lat: 38.7720104, lng: -85.4386566},
-//   {name: 'Turkey Run State Park', lat: 39.8799879, lng: -87.2348705},
-//   {name: 'Hardin Ridge Campground', lat: 39.0185067, lng: -86.4860538}
-// ];
+  var markers = [
+    {lat: 39.1549901, lng: -86.4331172, title: 'Brown County Campground'},
+    {lat: 38.7720104, lng: -85.4386566, title: 'Clifty Falls State Park'},
+    {lat: 39.8799879, lng: -87.2348705, title: 'Turkey Run State Campground'},
+    {lat: 39.8799973, lng: -87.2184102, title: 'Hardin Ridge Campground'}
+  ];
 
-// for (var i = 0; i < campingSites.length; i++) {
-//   var site = campingSites[i];
-//   var marker = new google.maps.Marker({
-//     position: {lat: site.lat, lng: site.lng},
-//     map: map,
-//     title: site.name
-//   });
-// }
+  markers.forEach(function(marker) {
+    new google.maps.Marker({
+      position: {lat: marker.lat, lng: marker.lng},
+      map: map,
+      title: marker.title
+    });
+  });
+}
+
 
