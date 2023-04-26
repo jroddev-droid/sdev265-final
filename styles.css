@@ -95,6 +95,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr ;
     gap: 1rem;
+    height: inherit;
 }
 
 .wildlife-card {
@@ -173,14 +174,16 @@ body {
 
 .contact-container {
     text-align: center;
-    background: #e8e4e6;
+    background: #004643;
+    color: #abd1c6;
+    padding-block: 1rem;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    padding-inline: 10rem;
+    margin-bottom: 3rem;
 }
 
-.contact-form {
-    border: 1px solid red;
-}
-
-/* Overall form styles */
+/* Form Styles */
 form {
     background-color: #fffffe;
     border-radius: 10px;
@@ -219,30 +222,6 @@ form {
   button[type="submit"]:hover {
     background-color: #004643;
   }
-  
-  /* Label styles */
-  label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  
-  /* Error message styles */
-  .error {
-    color: #e16162;
-    font-size: 12px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Success message styles */
-  .success {
-    color: #004643;
-    font-size: 12px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
-  
 
 /* Media Queries */
 /* styles for screens smaller than 768px */
